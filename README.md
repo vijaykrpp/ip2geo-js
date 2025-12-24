@@ -37,7 +37,7 @@ https://ip2geoapi.com/
   - Hosting / ASN classification
   - Trust score & risk level
 - ⚡ Fast global API
-- 📦 Simple, lightweight Python SDK
+- 📦 Simple, lightweight Node.js SDK
 - 🔓 No hidden paid-only fields (others charge extra for security data)
 
 ---
