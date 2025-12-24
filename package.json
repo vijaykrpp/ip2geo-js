@@ -14,7 +14,6 @@
     "nodejs-sdk"
   ],
   "dependencies": {
-    "axios": "^1.6.0",
-    "ip2geoapi": "^0.1.4"
+    "axios": "^1.6.0"
   }
 }
