@@ -33,28 +33,26 @@ class Ip2Geo {
       ? `${Ip2Geo.BASE_URL}/${ip}`
       : Ip2Geo.BASE_URL;
 
+    let response;
+
     try {
-      const response = await axios.get(url, {
+      response = await axios.get(url, {
         params,
-        timeout: this.timeout
+        timeout: this.timeout,
+        validateStatus: () => true // IMPORTANT: never throw on HTTP status
       });
-
-      // JSON is default
-      if (!format || format === "json") {
-        if (!response.data?.success) {
-          throw new Error(response.data?.error || "Unknown API error");
-        }
-        return response.data;
-      }
-
-      // XML / YAML / JSONP → raw response
-      return response.data;
     } catch (err) {
-      if (err.response?.data?.error) {
-        throw new Error(err.response.data.error);
-      }
-      throw err;
+      // TRUE transport failure (DNS, timeout, connection)
+      throw new Error("Unable to reach Ip2Geo API");
     }
+
+    // Default JSON → return decoded object AS-IS
+    if (!format || format === "json") {
+      return response.data;
+    }
+
+    // XML / YAML / JSONP → raw response
+    return response.data;
   }
 }
 
