@@ -1,5 +1,13 @@
 # ip2geo — Node.js SDK
 
+![API Status](https://img.shields.io/badge/API-Stable-brightgreen)
+![Coverage](https://img.shields.io/badge/IPv4%20%7C%20IPv6-Supported-blue)
+![Response Time](https://img.shields.io/badge/Latency-Fast-success)
+[![npm version](https://img.shields.io/npm/v/ip2geoapi)](https://www.npmjs.com/package/ip2geoapi)
+[![npm downloads](https://img.shields.io/npm/dm/ip2geoapi)](https://www.npmjs.com/package/ip2geoapi)
+[![License](https://img.shields.io/npm/l/ip2geoapi)](LICENSE)
+
+
 Official Node JS SDK for the **Ip2Geo API** — fast IP geolocation, network intelligence, and security risk detection.
 
 ---
